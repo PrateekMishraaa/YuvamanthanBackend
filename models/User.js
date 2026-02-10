@@ -3,6 +3,12 @@ import bcrypt from "bcryptjs";
 
 const UserSchema = new Schema(
   {
+    firstname:{
+      type:String,
+    },
+    lastname:{
+      type:String
+    },
     email: {
       type: String,
       required: true,
@@ -10,9 +16,15 @@ const UserSchema = new Schema(
       lowercase: true,
       trim: true
     },
+    mobile:{
+      type:String,
+      // required:true,
+      minlength:[10,"Phone number should  be atleast in  10 digits"],
+      maxlength:[10,"Phone number should not be more than 10 digits"]
+    },
     password: {
       type: String,
-      required: true,
+      // required: true,
       minlength: [8, "Password should be at least 8 characters"],
       maxlength: [255, "Password should not be more than 255 characters"]
     },
