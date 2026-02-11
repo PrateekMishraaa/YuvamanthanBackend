@@ -6,10 +6,11 @@ const PORT=process.env.PORT||4000
 import cors from "cors"
 import mongoose from "mongoose"
 import User from "./routes/Users.js"
-
+import Contact from "./routes/Contact.js"
 app.use(express.json())
 app.use(cors())
 app.use('/api',User)
+app.use('/api',Contact)
 app.get('/',(req,res)=>{
     console.log('baba')
     res.send("pandit")
