@@ -46,6 +46,7 @@ router.post('/login',async(req,res)=>{
             return res.status(403).json({message:"Incorrect password"})
         }
         const payload = {
+            id:isUser.id,
             email:isUser.email,
             password:isUser.password,
             role:isUser.role,
@@ -80,5 +81,6 @@ router.get('/allusers',async(req,res)=>{
         console.log('error',error)
         return res.status(500).json({message:"Internal server error",error})
     }
-})
+});
+
 export default router;
