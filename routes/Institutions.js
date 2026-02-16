@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 import Institutions from "../models/InstituteRegister.js";
 
-// Get institution by USER ID (not institution _id)
+
 router.get('/institution/:userId', async (req, res) => {
   try {
     const { userId } = req.params;
@@ -52,9 +52,7 @@ router.get('/institution/:userId', async (req, res) => {
   }
 });
 
-// Update institution profile by USER ID
-// Update institution profile - works with both userId and institution _id
-// Update institution profile - works with both userId and institution _id
+
 router.put('/institution-profile/:id', async (req, res) => {
   try {
     const { id } = req.params;
